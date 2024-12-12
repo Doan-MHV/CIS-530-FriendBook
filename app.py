@@ -281,7 +281,7 @@ def main():
                             f"{Fore.GREEN}Contact updated successfully!{Style.RESET_ALL}"
                         )
 
-                    elif contact_operation == "Delete Contacts":
+                    elif contact_operation == "Delete Contact":
                         filters = prompt(CONTACT_FILTER_PROMPTS)
                         print(f"{Fore.RED}Deleting filtered contacts.{Style.RESET_ALL}")
                         contact_funcs.delete_filtered_contact_lists(

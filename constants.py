@@ -138,25 +138,21 @@ CONTACT_UPDATE_PROMPTS = [
         "type": "input",
         "name": "new_user_id",
         "message": "Enter new User ID (Leave blank for no change):",
-        "default": None,
     },
     {
         "type": "input",
         "name": "new_contact_id",
         "message": "Enter new Contact ID (Leave blank for no change):",
-        "default": None,
     },
     {
         "type": "input",
         "name": "new_prefer_name",
         "message": "Enter new Preferred Name (Leave blank for no change):",
-        "default": None,
     },
     {
         "type": "input",
         "name": "new_note",
         "message": "Enter new Note (Leave blank for no change):",
-        "default": None,
     },
 ]
 

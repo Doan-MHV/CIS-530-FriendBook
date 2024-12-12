@@ -1,6 +1,10 @@
+CREATE SCHEMA IF NOT EXISTS FriendBook;
+
+use FriendBook;
+
 CREATE TABLE User
 (
-    userID      INT PRIMARY KEY AUTO_INCREMENT,
+    userID      INT PRIMARY KEY,
     name        VARCHAR(255)        NOT NULL,
     email       VARCHAR(255) UNIQUE NOT NULL,
     address     VARCHAR(255),

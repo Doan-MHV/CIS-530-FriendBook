@@ -10,7 +10,7 @@ class ContactListFunctions:
     def create_contact_list(self, user_id, contact_id, prefer_name, note):
         try:
             cursor = self.connection.cursor()
-            cursor.callproc("CreateContact", (user_id, contact_id, prefer_name, note))
+            cursor.callproc("CreateContact", (contact_id, user_id, prefer_name, note))
             self.connection.commit()
             print(
                 f"{Fore.CYAN}Contact list for user '{user_id}' with '{contact_id}' created successfully!{Style.RESET_ALL}"
@@ -34,7 +34,7 @@ class ContactListFunctions:
         try:
             cursor = self.connection.cursor()
             cursor.callproc(
-                "SelectFilteredContacts", (user_id, contact_id, prefer_name, note)
+                "SelectFilteredContacts", (contact_id, user_id, prefer_name, note)
             )
             result = cursor.fetchall()
             headers = ["User ID", "Contact ID", "Preferred Name", "Note"]
@@ -75,7 +75,7 @@ class ContactListFunctions:
         try:
             cursor = self.connection.cursor()
             cursor.callproc(
-                "DeleteFilteredContacts", (user_id, contact_id, prefer_name, note)
+                "DeleteFilteredContacts", (contact_id, user_id, prefer_name, note)
             )
             self.connection.commit()
             print("Contacts deleted successfully.")

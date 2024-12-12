@@ -10,7 +10,13 @@ CREATE PROCEDURE CreateUser(
 )
 BEGIN
     INSERT INTO User (userID, name, email, address, phoneNumber)
-    VALUES (p_userID, p_name, p_email, p_address, p_phoneNumber);
+    VALUES (
+        p_userID,
+        COALESCE(p_name, ''),
+        COALESCE(p_email, ''),
+        COALESCE(p_address, ''),
+        COALESCE(p_phoneNumber, '')
+    );
 END;
 
 ## Select
@@ -128,7 +134,12 @@ CREATE PROCEDURE CreateContact(
 )
 BEGIN
     INSERT INTO ContactList (contactID, userID, preferName, note)
-    VALUES (p_userID, p_contactID, p_preferName, p_note);
+    VALUES (
+        p_contactID,
+        p_userID,
+        COALESCE(p_preferName, ''),
+        COALESCE(p_note, '')
+    );
 END;
 
 ## Select
