@@ -145,7 +145,7 @@ def main():
                             new_email=user_update_details["new_email"] or None,
                             new_address=user_update_details["new_address"] or None,
                             new_phone_number=user_update_details["new_phone_number"]
-                                             or None,
+                            or None,
                         )
 
                     elif user_operation == "Delete Users":
